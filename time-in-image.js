@@ -2,7 +2,23 @@ const fs = require("fs");
 const request = require("request");
 const Jimp = require("jimp");
 const moment = require("moment-timezone");
-
+//IPを取得
+//test
+var getIP = function (req) {
+  if (req.headers['x-forwarded-for']) {
+    return req.headers['x-forwarded-for'];
+  }
+  if (req.connection && req.connection.remoteAddress) {
+    return req.connection.remoteAddress;
+  }
+  if (req.connection.socket && req.connection.socket.remoteAddress) {
+    return req.connection.socket.remoteAddress;
+  }
+  if (req.socket && req.socket.remoteAddress) {
+    return req.socket.remoteAddress;
+  }
+  return '0.0.0.0';
+};
 const make8x8ImageBufferWith4Colors = c=>{
 	return new Promise((resolve,reject)=>{
 		let imageData = [];
