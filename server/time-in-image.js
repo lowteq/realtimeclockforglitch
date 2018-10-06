@@ -1,7 +1,6 @@
 const fs = require("fs");
 const request = require("request");
 const Jimp = require("jimp");
-
 const make8x8ImageBufferWith4Colors = c=>{
 	return new Promise((resolve,reject)=>{
 		let imageData = [];
@@ -36,7 +35,7 @@ const makeTimeImageBuffer = (time)=>{ // 24,60,60
 		let h = ((time[0])/24)*255;
 		let m = ((time[1])/60)*255;
 		let s = ((time[2])/60)*255;
-	        
+
 		make8x8ImageBufferWith4Colors([
 			[h,m,s],
 			[s,h,m],
@@ -78,7 +77,7 @@ const TimeInImage = function (app,path) {
 				return;
 			}
 
-			try {			
+			try {
 				body = JSON.parse(body).data;
 
 				let time = body.datetime.time
