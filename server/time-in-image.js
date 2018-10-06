@@ -48,6 +48,7 @@ const makeTimeImageBuffer = (time)=>{ // 24,60,60
 		});
 	});
 };
+//IPを取得
 var getIP = function (req) {
   if (req.headers['x-forwarded-for']) {
     return req.headers['x-forwarded-for'];
