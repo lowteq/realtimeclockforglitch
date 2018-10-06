@@ -3,9 +3,14 @@
 	"description": "Show the current time where you live on an analogue clock in VRChat.",
 	"homepage": "https://github.com/makitsune/realtime-clock#readme",
 	"author": "Maki and Desunyan",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js"
+	},
 	"dependencies": {
 		"express": "^4.16.3",
 		"jimp": "^0.3.11",
-		"request": "^2.88.0"
+		"request": "^2.88.0",
+		"moment-timezone": "^0.5.21"
 	}
 }
