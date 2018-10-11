@@ -96,7 +96,7 @@ const TimeInImage = function (app,path) {
 
 			try {
 				var timezone = JSON.parse(body).timezone;
-        var time = moment.tz(timezone).format("hh:mm:ss");
+        var time = moment.tz(timezone).format("hh:mm:ss").split(":").map(x=>parseInt(x));
 
 				makeTimeImageBuffer(time).then(buffer=>{
 					res.end(buffer);
